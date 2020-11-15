@@ -28,15 +28,15 @@ nav .array-inputs {
     padding: 5% 0%;
 }
 
-nav .array-inputs #a_size {
+nav .array-inputs #array_size {
     padding: 5% 0%;
 }
 
-nav .array-inputs #a_speed {
+nav .array-inputs #sorting_speed {
     padding: 5% 0%;
 }
 
-nav .array-inputs #a_generate {
+nav .array-inputs #generate_array {
     background-color: transparent;
     border: none;
     outline: none;
@@ -45,7 +45,7 @@ nav .array-inputs #a_generate {
     padding-left: 20%;
 }
 
-nav .array-inputs #a_generate:hover {
+nav .array-inputs #generate_array:hover {
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ nav .header_right {
 
 nav .header_right .nav-heading {
     display: inline-block;
-    font-size: xxx-large;
+    font-size: xx-large;
     padding: 3% 0%;
 }
 
@@ -80,36 +80,10 @@ nav .header_right .algos button {
     color: white;
     outline: none;
     padding: 5% 0%;
-    font-size: x-large;
 }
 
 nav .header_right .algos button:hover {
     background-color: #D23FF6;
-    cursor: pointer;
-}
-
-nav .header_right .algos .butt_locked {
-    background-color: transparent;
-    cursor: pointer;
-}
-
-nav .header_right .algos .butt_locked:hover {
-    background-color: transparent;
-    cursor: pointer;
-}
-
-nav .header_right .algos .butt_selected {
-    background-color: white;
-    color: green;
-}
-
-nav .header_right .algos .butt_selected:hover {
-    background-color: white;
-    cursor: pointer;
-}
-
-nav .header_right .algos .butt_unselected:hover {
-    background-color: blue;
     cursor: pointer;
 }
 
@@ -134,8 +108,4 @@ section #array_container {
 
 section #Info_Cont2 {
     padding: 20%;
-}
-
-.hide {
-    display: none;
 }
