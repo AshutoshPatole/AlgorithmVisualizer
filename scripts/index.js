@@ -64,6 +64,9 @@ function startSortingAlgorithm() {
             console.log("Buuble is clicked");
             BubbleSort();
             break;
+        case "Selection":
+            SelectionSort();
+            break;
 
     }
 }
