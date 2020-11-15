@@ -13,7 +13,7 @@ let container = document.getElementById("array_container");
 */
 let div_sizes = [];
 let divs = [];
-let margin_size;
+let marginSize;
 
 // arraySize holds the value/input from the slider
 let arraySize = arraySizeSlider.value;
@@ -33,15 +33,15 @@ arraySizeSlider.addEventListener("input", updateArraySize);
 function generateArray() {
     container.innerHTML = "";
     for (let i = 0; i < arraySize; i++) {
-        div_sizes[i] = Math.floor(Math.random() * 0.70 * (arraySizeSlider.max - arraySizeSlider.min)) + 10;
+        div_sizes[i] = Math.floor(Math.random() * 0.35 * (arraySizeSlider.max - arraySizeSlider.min)) + 10;
         divs[i] = document.createElement("div");
         container.appendChild(divs[i]);
-        margin_size = 0.15;
+        marginSize = 0.1;
         // console.log(`this is size of array : ${arraySize}`);
         if (arraySize < 50) {
             divs[i].innerHTML = div_sizes[i];
         }
-        divs[i].style = " margin:0% " + margin_size + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * margin_size)) + "%; height:" + (div_sizes[i]) + "%;";
+        divs[i].style = " margin:0% " + marginSize + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + (div_sizes[i]) + "%;";
     }
 }
 
@@ -58,5 +58,12 @@ for (let i = 0; i < algorithmButtons.length; i++) {
 
 function startSortingAlgorithm() {
     // TODO write a switch case to change algorithms
+    console.log(this.innerHTML);
+    switch (this.innerHTML) {
+        case "Bubble":
+            console.log("Buuble is clicked");
+            BubbleSort();
+            break;
 
+    }
 }
