@@ -61,11 +61,13 @@ function startSortingAlgorithm() {
     console.log(this.innerHTML);
     switch (this.innerHTML) {
         case "Bubble":
-            console.log("Buuble is clicked");
             BubbleSort();
             break;
         case "Selection":
             SelectionSort();
+            break;
+        case "Insertion":
+            InsertionSort();
             break;
 
     }

@@ -9,7 +9,7 @@ function visualizeSpeed() {
     // console.log(arraySortingSpeed);
     switch (parseInt(arraySortingSpeed)) {
         case 1:
-            speed = 5;
+            speed = 1;
             break;
         case 2:
             speed = 10;
@@ -28,13 +28,11 @@ function visualizeSpeed() {
     // console.log(speed);
 }
 
-function updateDiv(container, height, gradient, innerText) {
+function updateDiv(container, height, gradient) {
     window.setTimeout(function() {
         container.style = " margin:0% " + marginSize + "%; width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + height + "%; background-image:" + gradient + ";";
         if (arraySize < 50) {
-
-            container.innerHTML = innerText;
-
+            container.innerHTML = height;
         }
     }, cDelay += delayTime);
 }
