@@ -9,7 +9,7 @@ function visualizeSpeed() {
     // console.log(arraySortingSpeed);
     switch (parseInt(arraySortingSpeed)) {
         case 1:
-            speed = 1;
+            speed = 5;
             break;
         case 2:
             speed = 10;
