@@ -30,6 +30,7 @@ function InsertionSort() {
         }
     }
     updateDiv(divs[j - 1], div_sizes[j - 1], greenGradient);
+    enableButtons();
 }
 
 // for (let i = 1; i < arraySize; i++) {

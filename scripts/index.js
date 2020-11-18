@@ -56,8 +56,24 @@ for (let i = 0; i < algorithmButtons.length; i++) {
     algorithmButtons[i].addEventListener("click", startSortingAlgorithm);
 }
 
+
+// disable interactions while algorithm is running
+function disableButtons() {
+    for (let i = 0; i < algorithmButtons.length; i++) {
+        algorithmButtons[i].classList = [];
+        algorithmButtons[i].classList.add("disabled");
+        algorithmButtons[i].disabled = true;
+    }
+    sortingSpeed.disabled = true;
+    generateArrayButton.disabled = true;
+    arraySizeSlider.disabled = true;
+
+}
+
+// starting sorting algorithm
 function startSortingAlgorithm() {
-    // TODO write a switch case to change algorithms
+    disableButtons();
+    // this.classList.add("selectedAlgo");
     console.log(this.innerHTML);
     switch (this.innerHTML) {
         case "Bubble":
@@ -69,6 +85,21 @@ function startSortingAlgorithm() {
         case "Insertion":
             InsertionSort();
             break;
-
     }
+}
+
+// enable interactions after completion of algorithm
+function enableButtons() {
+    console.log(`Buttons unlocked.... ${cDelay}`);
+    window.setTimeout(function() {
+        for (let i = 0; i < algorithmButtons.length; i++) {
+            algorithmButtons[i].classList.remove("disabled");
+            // algorithmButtons[i].classList.remove("selectedAlgo");
+            algorithmButtons[i].disabled = false;
+        }
+        sortingSpeed.disabled = false;
+        generateArrayButton.disabled = false;
+        arraySizeSlider.disabled = false;
+
+    }, cDelay += delayTime);
 }

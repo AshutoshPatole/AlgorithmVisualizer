@@ -5,7 +5,7 @@ function BubbleSort() {
             updateDiv(divs[j], div_sizes[j], yellowGradient);
 
             if (div_sizes[j] > div_sizes[j + 1]) {
-                let distance = Math.floor(divs[j].offsetLeft - divs[j + 1].offsetLeft);
+                // let distance = Math.floor(divs[j].offsetLeft - divs[j + 1].offsetLeft);
                 updateDiv(divs[j], div_sizes[j], redGradient);
                 updateDiv(divs[j + 1], div_sizes[j + 1], redGradient);
                 // [divs[j], divs[j + 1]] = [divs[j + 1], divs[j]];
@@ -28,5 +28,5 @@ function BubbleSort() {
 
     }
     updateDiv(divs[0], div_sizes[0], greenGradient);
-
+    enableButtons();
 }

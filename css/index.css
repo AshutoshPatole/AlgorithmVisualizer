@@ -206,6 +206,12 @@ nav .header_right .algos button:hover {
     cursor: pointer;
 }
 
+nav .header_right .algos .disabled {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+}
+
 section {
     display: -ms-grid;
     display: grid;

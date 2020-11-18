@@ -31,5 +31,6 @@ function SelectionSort() {
 
     }
     updateDiv(divs[arraySize - 1], div_sizes[arraySize - 1], greenGradient);
+    enableButtons();
 
 }
