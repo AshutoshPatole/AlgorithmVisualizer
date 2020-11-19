@@ -85,6 +85,9 @@ function startSortingAlgorithm() {
         case "Insertion":
             InsertionSort();
             break;
+        case "Merge":
+            MergeSort();
+            break;
     }
 }
 
