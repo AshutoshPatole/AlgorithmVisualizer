@@ -88,6 +88,9 @@ function startSortingAlgorithm() {
         case "Merge":
             MergeSort();
             break;
+        case "Quick":
+            QuickSort();
+            break;
     }
 }
 

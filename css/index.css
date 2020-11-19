@@ -212,25 +212,31 @@ nav .header_right .algos .disabled {
     cursor: pointer;
 }
 
-section {
+
+/* section {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 60% 20%;
-    grid-template-columns: 20% 60% 20%;
-}
+    -ms-grid-columns: 00% 100% 0%;
+    grid-template-columns: 0% 100% 0%;
+} */
 
-section #Info_Cont1 {
+
+/* section #Info_Cont1 {
     padding: 20%;
-}
+} */
 
-section #array_container {
+#array_container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    width: 98%;
+    margin-left: 20px;
+    margin-right: 20px;
     height: 70vh;
 }
 
+
+/* 
 section #Info_Cont2 {
     padding: 20%;
-}
+} */
