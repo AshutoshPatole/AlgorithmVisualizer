@@ -91,6 +91,9 @@ function startSortingAlgorithm() {
         case "Quick":
             QuickSort();
             break;
+        case "Heap":
+            HeapSort();
+            break;
     }
 }
 
