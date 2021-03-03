@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Visualizer</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="scripts/Chart.bundle.min.js"></script>
+
 
 </head>
 
@@ -43,7 +45,16 @@
     <section>
         <div id="array_container" style="text-align:center">
         </div>
+
     </section>
+    <!-- <div id="chart"></div> -->
+    <div class="chart-container" style="position: relative; height:40vh; width:100vw">
+        <canvas id="chart"></canvas>
+    </div>
+    <!-- <canvas id="myChart" width="20" height="20"></canvas> -->
+    <script>
+        
+    </script>
 
     <footer>
 
@@ -57,6 +68,7 @@
     <script src="scripts/algorithms/quickSort.js"></script>
     <script src="scripts/algorithms/heapSort.js"></script>
     <script src="scripts/globals.js"></script>
+
 </body>
 
 </html>

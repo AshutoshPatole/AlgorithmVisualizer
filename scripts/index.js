@@ -100,7 +100,7 @@ function startSortingAlgorithm() {
 // enable interactions after completion of algorithm
 function enableButtons() {
     console.log(`Buttons unlocked.... ${cDelay}`);
-    window.setTimeout(function() {
+    window.setTimeout(function () {
         for (let i = 0; i < algorithmButtons.length; i++) {
             algorithmButtons[i].classList.remove("disabled");
             // algorithmButtons[i].classList.remove("selectedAlgo");
@@ -112,3 +112,78 @@ function enableButtons() {
 
     }, cDelay += delayTime);
 }
+let time = [];
+let xAxis = [];
+
+
+function xAxisCount() {
+    for (let i = 0; i < time.length; i++) {
+        xAxis.push(i + 2);
+    }
+}
+
+
+
+// ChartJs
+
+let ctx = document.getElementById('chart').getContext('2d');
+var data = {
+    labels: [0],
+    datasets: [{
+        label: 'Time',
+        data: [0],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 2
+    }]
+};
+let myChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+        animations: {
+            tension: {
+                duration: 10000,
+                easing: 'linear',
+                from: 0,
+                to: 1,
+                loop: false
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+setInterval(() => {
+    if (time.length == 0) {
+        console.log("do nothing");
+    }
+    else if (sortingSpeed.disabled == false) {
+        console.log("Sorting finished");
+
+    }
+    else {
+        myChart.data.labels = xAxis;
+        myChart.data.datasets[0].data = time;
+        myChart.update();
+    }
+}, 200);

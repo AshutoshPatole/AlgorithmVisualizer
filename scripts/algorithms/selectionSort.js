@@ -2,6 +2,7 @@ function SelectionSort() {
     cDelay = 0;
     let minIndex = 0;
     for (let i = 0; i < arraySize - 1; i++) {
+        time.push(cDelay / 1000);
         updateDiv(divs[i], div_sizes[i], redGradient);
         minIndex = i;
         for (var j = i + 1; j < arraySize; j++) {
@@ -30,7 +31,9 @@ function SelectionSort() {
         updateDiv(divs[i], div_sizes[i], greenGradient);
 
     }
+
     updateDiv(divs[arraySize - 1], div_sizes[arraySize - 1], greenGradient);
+    xAxisCount();
     enableButtons();
 
 }

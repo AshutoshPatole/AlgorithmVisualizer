@@ -2,6 +2,7 @@ function MergeSort() {
 
     cDelay = 0;
     mergePartition(0, arraySize - 1);
+    xAxisCount();
     enableButtons();
 }
 
@@ -17,6 +18,7 @@ function mergePartition(start, end) {
 }
 
 function mergeSort(start, middle, end) {
+    time.push(cDelay / 1000);
     let s = start,
         m = middle + 1;
     let tempArray = [],
@@ -36,8 +38,6 @@ function mergeSort(start, middle, end) {
             updateDiv(divs[m - 1], div_sizes[m - 1], redGradient);
         }
     }
-    console.log(`the tempArray is ${tempArray}`);
-
     for (let j = 0; j < temp; j++) {
         div_sizes[start++] = tempArray[j];
         updateDiv(divs[start - 1], div_sizes[start - 1], greenGradient);
