@@ -2,6 +2,7 @@ function QuickSort() {
     cDelay = 0;
     quickSort(0, arraySize - 1);
     enableButtons();
+    xAxisCount();
 }
 
 function quickSort(start, end) {
@@ -13,6 +14,8 @@ function quickSort(start, end) {
 }
 
 function quickPartition(start, end) {
+    time.push(cDelay / 1000);
+
     let i = start + 1;
     let pivotIndex = div_sizes[start];
     updateDiv(divs[start], div_sizes[start], yellowGradient);

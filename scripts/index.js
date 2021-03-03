@@ -97,9 +97,11 @@ function startSortingAlgorithm() {
     }
 }
 
+let cTime = 0;
 // enable interactions after completion of algorithm
 function enableButtons() {
     console.log(`Buttons unlocked.... ${cDelay}`);
+    cTime = cDelay;
     window.setTimeout(function () {
         for (let i = 0; i < algorithmButtons.length; i++) {
             algorithmButtons[i].classList.remove("disabled");
@@ -157,7 +159,7 @@ let myChart = new Chart(ctx, {
     options: {
         animations: {
             tension: {
-                duration: 10000,
+                duration: 100,
                 easing: 'linear',
                 from: 0,
                 to: 1,
@@ -173,7 +175,9 @@ let myChart = new Chart(ctx, {
         }
     }
 });
+let index = 0;
 setInterval(() => {
+    let temp = [], tempAxis = [];
     if (time.length == 0) {
         console.log("do nothing");
     }
@@ -182,8 +186,11 @@ setInterval(() => {
 
     }
     else {
+        temp = time.slice(0, index);
+        tempAxis = xAxis.slice(0, index);
+        index++;
         myChart.data.labels = xAxis;
-        myChart.data.datasets[0].data = time;
+        myChart.data.datasets[0].data = temp;
         myChart.update();
     }
-}, 200);
+}, 250);

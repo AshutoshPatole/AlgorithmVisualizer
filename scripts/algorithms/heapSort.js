@@ -2,8 +2,8 @@ function HeapSort() {
     c_delay = 0;
 
     heap_sort();
-
     enableButtons();
+    xAxisCount();
 }
 
 function swap(i, j) {
@@ -22,6 +22,8 @@ function swap(i, j) {
 }
 
 function max_heapify(n, i) {
+    time.push(cDelay);
+
     let largest = i;
     let l = 2 * i + 1;
     let r = 2 * i + 2;

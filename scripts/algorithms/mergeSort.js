@@ -2,8 +2,9 @@ function MergeSort() {
 
     cDelay = 0;
     mergePartition(0, arraySize - 1);
-    xAxisCount();
     enableButtons();
+    xAxisCount();
+
 }
 
 

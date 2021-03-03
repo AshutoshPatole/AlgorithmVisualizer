@@ -2,6 +2,7 @@ function BubbleSort() {
     cDelay = 0;
     for (let i = 0; i < arraySize - 1; i++) {
         for (var j = 0; j < (arraySize - i - 1); j++) {
+            time.push(cDelay / 1000);
             updateDiv(divs[j], div_sizes[j], yellowGradient);
 
             if (div_sizes[j] > div_sizes[j + 1]) {
@@ -29,4 +30,5 @@ function BubbleSort() {
     }
     updateDiv(divs[0], div_sizes[0], greenGradient);
     enableButtons();
+    xAxisCount();
 }

@@ -6,6 +6,7 @@ function InsertionSort() {
         let key = div_sizes[j];
         let i = j - 1;
         while (i >= 0 && div_sizes[i] > key) {
+            time.push(cDelay / 1000);
             updateDiv(divs[i], div_sizes[i], redGradient);
             updateDiv(divs[i + 1], div_sizes[i + 1], redGradient);
 
@@ -31,21 +32,5 @@ function InsertionSort() {
     }
     updateDiv(divs[j - 1], div_sizes[j - 1], greenGradient);
     enableButtons();
+    xAxisCount();
 }
-
-// for (let i = 1; i < arraySize; i++) {
-//     updateDiv(divs[i], div_sizes[i], yellowGradient);
-//     for (let j = i - 1; j > 0; j--) {
-//         if (div_sizes[i] < div_sizes[j]) {
-//             updateDiv(divs[j], div_sizes[i], redGradient);
-//             updateDiv(divs[j - 1], div_sizes[j - 1], redGradient);
-
-//             const temp = div_sizes[j];
-//             div_sizes[j] = div_sizes[j - 1];
-//             div_sizes[j - 1] = temp;
-//             updateDiv(divs[j], div_sizes[i], redGradient);
-//             updateDiv(divs[j - 1], div_sizes[j - 1], redGradient);
-//             // updateDiv(divs[j], div_sizes[j], blueGradient);
-//         }
-//     }
-// }
