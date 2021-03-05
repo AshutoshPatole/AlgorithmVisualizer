@@ -20,6 +20,7 @@ function mergePartition(start, end) {
 
 function mergeSort(start, middle, end) {
     time.push(cDelay / 1000);
+    memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
     let s = start,
         m = middle + 1;
     let tempArray = [],

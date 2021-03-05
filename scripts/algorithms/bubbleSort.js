@@ -1,10 +1,10 @@
 function BubbleSort() {
     cDelay = 0;
     for (let i = 0; i < arraySize - 1; i++) {
+        time.push(cDelay / 1000);
+        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
         for (var j = 0; j < (arraySize - i - 1); j++) {
-            time.push(cDelay / 1000);
             updateDiv(divs[j], div_sizes[j], yellowGradient);
-
             if (div_sizes[j] > div_sizes[j + 1]) {
                 // let distance = Math.floor(divs[j].offsetLeft - divs[j + 1].offsetLeft);
                 updateDiv(divs[j], div_sizes[j], redGradient);

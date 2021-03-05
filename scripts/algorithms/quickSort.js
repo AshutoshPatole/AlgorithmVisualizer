@@ -14,8 +14,9 @@ function quickSort(start, end) {
 }
 
 function quickPartition(start, end) {
+    // console.log(window.performance.memory.usedJSHeapSize);
     time.push(cDelay / 1000);
-
+    memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
     let i = start + 1;
     let pivotIndex = div_sizes[start];
     updateDiv(divs[start], div_sizes[start], yellowGradient);

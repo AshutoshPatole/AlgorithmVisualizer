@@ -22,8 +22,7 @@ function swap(i, j) {
 }
 
 function max_heapify(n, i) {
-    time.push(cDelay);
-
+ 
     let largest = i;
     let l = 2 * i + 1;
     let r = 2 * i + 2;
@@ -61,6 +60,8 @@ function heap_sort() {
     }
 
     for (let i = arraySize - 1; i > 0; i--) {
+        time.push(cDelay / 1000);
+        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
         swap(0, i);
         updateDiv(divs[i], div_sizes[i], greenGradient);
         updateDiv(divs[i], div_sizes[i], yellowGradient);

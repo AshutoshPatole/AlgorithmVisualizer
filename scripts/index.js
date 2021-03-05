@@ -19,7 +19,7 @@ let marginSize;
 let arraySize = arraySizeSlider.value;
 
 // Event Listeners
-generateArrayButton.addEventListener("click", generateArray);
+generateArrayButton.addEventListener("click", generateArrayAndResetGraph);
 arraySizeSlider.addEventListener("input", updateArraySize);
 
 /* 
@@ -116,6 +116,7 @@ function enableButtons() {
 }
 let time = [];
 let xAxis = [];
+let memoryUsage = [];
 
 
 function xAxisCount() {
@@ -124,12 +125,10 @@ function xAxisCount() {
     }
 }
 
-
-
 // ChartJs
 
-let ctx = document.getElementById('chart').getContext('2d');
-var data = {
+let timeChart = document.getElementById('time').getContext('2d');
+let data = {
     labels: [0],
     datasets: [{
         label: 'Time',
@@ -147,13 +146,18 @@ var data = {
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)'
         ],
         borderWidth: 2
     }]
 };
-let myChart = new Chart(ctx, {
+let myChart = new Chart(timeChart, {
     type: 'line',
     data: data,
     options: {
@@ -170,27 +174,102 @@ let myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Time in Seconds'
                 }
             }]
         }
     }
 });
-let index = 0;
+let index = 0, spaceIndex = 0;
 setInterval(() => {
-    let temp = [], tempAxis = [];
-    if (time.length == 0) {
+    let temp = [], spaceTemp = [];
+    if (time.length == 0 && memoryUsage.length == 0) {
         console.log("do nothing");
     }
-    else if (sortingSpeed.disabled == false) {
+    else if (time.length == index + 1) {
         console.log("Sorting finished");
 
     }
     else {
         temp = time.slice(0, index);
+        spaceTemp = memoryUsage.slice(0, spaceIndex);
         tempAxis = xAxis.slice(0, index);
         index++;
+        spaceIndex++;
         myChart.data.labels = xAxis;
         myChart.data.datasets[0].data = temp;
         myChart.update();
+
+        spaceChart.data.labels = xAxis;
+        spaceChart.data.datasets[0].data = spaceTemp;
+        spaceChart.update();
     }
 }, 250);
+
+function generateArrayAndResetGraph() {
+    generateArray();
+    myChart.data.labels = [];
+    myChart.data.datasets[0].data = [];
+    myChart.update();
+}
+
+
+let space = document.getElementById('space').getContext('2d');
+let spaceData = {
+    labels: [0],
+    datasets: [{
+        label: 'Space',
+        data: [0],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 2
+    }]
+};
+let spaceChart = new Chart(space, {
+    type: 'line',
+    data: spaceData,
+    options: {
+        animations: {
+            tension: {
+                duration: 100,
+                easing: 'linear',
+                from: 0,
+                to: 1,
+                loop: false
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Space in MB'
+                }
+            }]
+        }
+    }
+});

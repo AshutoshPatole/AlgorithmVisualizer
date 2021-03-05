@@ -2,11 +2,12 @@ function InsertionSort() {
     cDelay = 0;
 
     for (var j = 0; j < arraySize; j++) {
+        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
+        time.push(cDelay / 1000);
         updateDiv(divs[j], div_sizes[j], yellowGradient);
         let key = div_sizes[j];
         let i = j - 1;
         while (i >= 0 && div_sizes[i] > key) {
-            time.push(cDelay / 1000);
             updateDiv(divs[i], div_sizes[i], redGradient);
             updateDiv(divs[i + 1], div_sizes[i + 1], redGradient);
 
