@@ -221,7 +221,7 @@ let space = document.getElementById('space').getContext('2d');
 let spaceData = {
     labels: [0],
     datasets: [{
-        label: 'Space',
+        label: 'Memory Usage',
         data: [0],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

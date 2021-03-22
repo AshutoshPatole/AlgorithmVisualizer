@@ -213,30 +213,29 @@ nav .header_right .algos .disabled {
 }
 
 
-/* section {
+section {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 00% 100% 0%;
-    grid-template-columns: 0% 100% 0%;
-} */
-
-
-/* section #Info_Cont1 {
-    padding: 20%;
-} */
-
-#array_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 98%;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 70vh;
+    -ms-grid-columns: 10% 80% 10%;
+    grid-template-columns: 10% 80% 10%;
 }
 
 
-/* 
-section #Info_Cont2 {
+section #legends {
     padding: 20%;
-} */
+}
+
+section #array_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 85%;
+    height: 70vh;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+section #algo_desc {
+    padding: 20%;
+}
