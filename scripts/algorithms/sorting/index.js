@@ -5,6 +5,8 @@ let generateArrayButton = document.getElementById("generate_array");
 let sortingSpeed = document.getElementById("sorting_speed");
 let algorithmButtons = document.querySelectorAll(".algos button");
 let container = document.getElementById("array_container");
+let compare = document.getElementById("compare");
+let modal = document.getElementById("modal-content");
 
 /* 
     we will create 2 arrays here
@@ -159,8 +161,6 @@ function xAxisCount() {
     }
 }
 
-// ChartJs
-
 let timeChart = document.getElementById('time').getContext('2d');
 let data = {
     labels: [0],
@@ -307,3 +307,70 @@ let spaceChart = new Chart(space, {
         }
     }
 });
+
+
+
+let algos = ['Bubble', 'Selection', 'Insertion', 'Merge', 'Quick', 'Heap'];
+let allAlgoSpeedResult = [];
+let allAlgoMemoryUsage = [];
+setInterval(() => {
+
+    if (time.length == 0) {
+        console.log("no algo has been ran yet");
+        modal.innerHTML = "No data";
+    }
+    else {
+        console.log("ALGO has run");
+
+        let topTable = "<table class='styled-table'>" +
+            "<thead>" +
+            "<tr>" +
+            "<th>algorithm</th>" +
+            "<th>Time(seconds)</th>" +
+            "<th>Space(mb)</th>" +
+            "</tr>" +
+            "</thead>" +
+            "<tbody>" +
+            "<tr>";
+        for (let i = 0; i < algos.length; i++) {
+            topTable += "<td>" + algos[i] + "</td>" +
+                "<td>" + allAlgoSpeedResult[i] + "</td>" +
+                "<td>" + allAlgoMemoryUsage[i] + "</td>" +
+                "</tr>";
+        }
+        topTable += "</tbody>" +
+            "</table>";
+        modal.innerHTML = "";
+        modal.innerHTML = topTable;
+    }
+}, 300);
+
+let arrayOfFunctions = [
+    BubbleSort(),
+    SelectionSort()
+]
+
+
+function runAll() {
+
+    let index = 1;
+    // setInterval(() => {
+    //     arrayOfFunctions[index]();
+
+    //     index++;
+    // }, 15000);
+
+    arrayOfFunctions.forEach(() => {
+
+        index++
+    })
+
+
+    // BubbleSort(),
+
+    // arrayOfFunctions.map((e) => {
+    //     console.log(e)
+    // })
+}
+
+window.onload = runAll();

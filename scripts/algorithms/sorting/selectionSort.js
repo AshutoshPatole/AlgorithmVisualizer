@@ -2,8 +2,12 @@ function SelectionSort() {
     cDelay = 0;
     let minIndex = 0;
     for (let i = 0; i < arraySize - 1; i++) {
-        time.push(cDelay / 1000);
-        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
+        let memory = window.performance.memory.usedJSHeapSize / 1000000;
+        let delay = cDelay / 1000;
+        time.push(delay);
+        allAlgoSpeedResult[1] = delay;
+        memoryUsage.push(memory);
+        allAlgoMemoryUsage.push(memory);
         updateDiv(divs[i], div_sizes[i], redGradient);
         minIndex = i;
         for (var j = i + 1; j < arraySize; j++) {

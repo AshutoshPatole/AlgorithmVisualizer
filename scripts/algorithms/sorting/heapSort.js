@@ -60,8 +60,12 @@ function heap_sort() {
     }
 
     for (let i = arraySize - 1; i > 0; i--) {
-        time.push(cDelay / 1000);
-        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
+        let memory = window.performance.memory.usedJSHeapSize / 1000000;
+        let delay = cDelay / 1000;
+        time.push(delay);
+        allAlgoSpeedResult[5] = delay;
+        memoryUsage.push(memory);
+        allAlgoMemoryUsage[5] = memory;
         swap(0, i);
         updateDiv(divs[i], div_sizes[i], greenGradient);
         updateDiv(divs[i], div_sizes[i], yellowGradient);

@@ -19,8 +19,12 @@ function mergePartition(start, end) {
 }
 
 function mergeSort(start, middle, end) {
-    time.push(cDelay / 1000);
-    memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
+    let memory = window.performance.memory.usedJSHeapSize / 1000000;
+    let delay = cDelay / 1000;
+    time.push(delay);
+    allAlgoSpeedResult[3] = delay;
+    memoryUsage.push(memory);
+    allAlgoMemoryUsage.push(memory);
     let s = start,
         m = middle + 1;
     let tempArray = [],

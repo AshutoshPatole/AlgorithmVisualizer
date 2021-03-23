@@ -10,9 +10,101 @@
 
 <body>
 
-    <a href="cpu-shceduling.html"> CPU </a>
-    <br> 
-    <a href="sorting.html"> Sorting </a>
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <img src="./path.png" alt="">
+                <a href="cpu-shceduling.html"> CPU </a>
+            </div>
+            <div class="card">
+                <img src="./path.png" alt="">
+                <a href="sorting.html"> Sorting </a>
+            </div>
+            <div class="card">
+                <img src="./path.png" alt="">
+                <a href="path.html">Path </a>
+            </div>
+        </div>
+        <div class="done-by">
+            <h3>Made by</h3>
+            <p>Ashutosh Patole A</p>
+            <p>Abilash S H</p>
+        </div>
+    </div>
+
+    <style>
+        .container{
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .cards{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .card{
+            height: 40vh;
+            width: 20%;
+            margin-right: 20px;
+            background: #F9F9F9 0% 0% no-repeat padding-box;
+            box-shadow: 0px 20px 20px #395E7150;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card img{
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 40px;
+        }
+
+        .card a{
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .done-by{
+            margin-left: auto;
+            margin-top: auto;
+            padding: 20px;
+        }
+
+
+        .done-by h3{
+            font-size: 30px;
+        }
+     
+
+        .done-by p{
+           font-size: 20px;
+           font-family: 'Courier New', Courier, monospace;
+           font-weight: bold;
+        }
+
+        @media  screen and (max-width:900px) {
+
+            .cards{
+                flex-direction: column;
+                
+            }
+            .card{
+                width: 100%;
+            }
+            
+        }
+    </style>
 
 </body>
 
