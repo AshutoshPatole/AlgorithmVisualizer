@@ -63,9 +63,9 @@ function heap_sort() {
         let memory = window.performance.memory.usedJSHeapSize / 1000000;
         let delay = cDelay / 1000;
         time.push(delay);
-        allAlgoSpeedResult[5] = delay;
+        // allAlgoSpeedResult[5] = delay;
         memoryUsage.push(memory);
-        allAlgoMemoryUsage[5] = memory;
+        // allAlgoMemoryUsage[5] = memory;
         swap(0, i);
         updateDiv(divs[i], div_sizes[i], greenGradient);
         updateDiv(divs[i], div_sizes[i], yellowGradient);

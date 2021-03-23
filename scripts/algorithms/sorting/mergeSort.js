@@ -22,9 +22,9 @@ function mergeSort(start, middle, end) {
     let memory = window.performance.memory.usedJSHeapSize / 1000000;
     let delay = cDelay / 1000;
     time.push(delay);
-    allAlgoSpeedResult[3] = delay;
+    // allAlgoSpeedResult[3] = delay;
     memoryUsage.push(memory);
-    allAlgoMemoryUsage.push(memory);
+    // allAlgoMemoryUsage.push(memory);
     let s = start,
         m = middle + 1;
     let tempArray = [],

@@ -4,9 +4,9 @@ function BubbleSort() {
         let memory = window.performance.memory.usedJSHeapSize / 1000000;
         let delay = cDelay / 1000;
         time.push(delay);
-        allAlgoSpeedResult[0] = delay;
+        // allAlgoSpeedResult[0] = delay;
         memoryUsage.push(memory);
-        allAlgoMemoryUsage[0] = memory;
+        // allAlgoMemoryUsage[0] = memory;
         for (var j = 0; j < (arraySize - i - 1); j++) {
             updateDiv(divs[j], div_sizes[j], yellowGradient);
             if (div_sizes[j] > div_sizes[j + 1]) {

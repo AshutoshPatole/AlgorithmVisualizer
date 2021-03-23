@@ -5,9 +5,9 @@ function SelectionSort() {
         let memory = window.performance.memory.usedJSHeapSize / 1000000;
         let delay = cDelay / 1000;
         time.push(delay);
-        allAlgoSpeedResult[1] = delay;
+        // allAlgoSpeedResult[1] = delay;
         memoryUsage.push(memory);
-        allAlgoMemoryUsage.push(memory);
+        // allAlgoMemoryUsage.push(memory);
         updateDiv(divs[i], div_sizes[i], redGradient);
         minIndex = i;
         for (var j = i + 1; j < arraySize; j++) {

@@ -5,9 +5,9 @@ function InsertionSort() {
         let memory = window.performance.memory.usedJSHeapSize / 1000000;
         let delay = cDelay / 1000;
         time.push(delay);
-        allAlgoSpeedResult[2] = delay;
+        // allAlgoSpeedResult[2] = delay;
         memoryUsage.push(memory);
-        allAlgoMemoryUsage[2] = memory;
+        // allAlgoMemoryUsage[2] = memory;
         updateDiv(divs[j], div_sizes[j], yellowGradient);
         let key = div_sizes[j];
         let i = j - 1;
