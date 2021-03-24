@@ -7,8 +7,6 @@ let algorithmButtons = document.querySelectorAll(".algos button");
 let container = document.getElementById("array_container");
 let compare = document.getElementById("compare");
 let modal = document.getElementById("modal-content");
-let chevron = document.querySelectorAll(".chevron");
-
 /* 
     we will create 2 arrays here
         ==> div_sizes[0..n] will store the heights of the respected div(bar)
@@ -77,7 +75,6 @@ function disableButtons() {
 function startSortingAlgorithm() {
     disableButtons();
     // this.classList.add("selectedAlgo");
-    console.log(this.innerHTML);
     switch (this.innerHTML) {
         case "Bubble":
             BubbleSort();
@@ -222,7 +219,6 @@ let index = 0, spaceIndex = 0;
 setInterval(() => {
     let temp = [], spaceTemp = [];
     if (time.length == 0 && memoryUsage.length == 0) {
-       
     }
     else if (time.length == index + 1) {
         console.log("Sorting finished");
