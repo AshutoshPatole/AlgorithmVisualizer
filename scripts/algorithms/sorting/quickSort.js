@@ -3,7 +3,7 @@ function QuickSort() {
     quickSort(0, arraySize - 1);
     enableButtons();
     xAxisCount();
-    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Quick sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
 
 function quickSort(start, end) {

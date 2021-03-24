@@ -4,7 +4,7 @@ function HeapSort() {
     heap_sort();
     enableButtons();
     xAxisCount();
-    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Heap sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
 
 function swap(i, j) {
@@ -23,7 +23,7 @@ function swap(i, j) {
 }
 
 function max_heapify(n, i) {
- 
+
     let largest = i;
     let l = 2 * i + 1;
     let r = 2 * i + 2;

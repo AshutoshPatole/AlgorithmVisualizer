@@ -4,7 +4,7 @@ function MergeSort() {
     mergePartition(0, arraySize - 1);
     enableButtons();
     xAxisCount();
-    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("merge sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
 
 

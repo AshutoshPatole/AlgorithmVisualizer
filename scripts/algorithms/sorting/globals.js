@@ -3,9 +3,9 @@ const redGradient = "linear-gradient(to bottom right, #A40606, #D98324)";
 const yellowGradient = "linear-gradient(to bottom right, #FFDD00, #FBB034)";
 const blueGradient = "linear-gradient(to bottom right, #3859B2, #D23FF6)";
 
-function toast (time, space){
+function toast (algorith, time, space){
     let timeToFinish = `Time: ${time} Space : ${space} `;
-    tata.success('Merge Sort', timeToFinish, {
+    tata.success(algorith, timeToFinish, {
         duration: 10000,
         position: 'br',
         animate: 'slide'
