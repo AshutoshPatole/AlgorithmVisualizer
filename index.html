@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="scripts/tata.js" defer></script>
     <title>Algorithms Visualization</title>
 </head>
 
@@ -33,13 +35,14 @@
     </div>
 
     <style>
-        .container{
+        .container {
             height: 90vh;
             width: 100%;
             display: flex;
             flex-direction: column;
         }
-        .cards{
+
+        .cards {
             display: flex;
             width: 100%;
             align-items: center;
@@ -47,7 +50,7 @@
             text-decoration: none;
         }
 
-        .card{
+        .card {
             height: 40vh;
             width: 20%;
             margin-right: 20px;
@@ -61,48 +64,49 @@
             justify-content: center;
         }
 
-        .card img{
+        .card img {
             height: 200px;
             width: 100%;
             object-fit: contain;
             margin-bottom: 40px;
         }
 
-        .card a{
+        .card a {
             text-decoration: none;
             color: black;
             font-size: 40px;
             font-weight: bold;
         }
 
-        .done-by{
+        .done-by {
             margin-left: auto;
             margin-top: auto;
             padding: 20px;
         }
 
 
-        .done-by h3{
+        .done-by h3 {
             font-size: 30px;
         }
-     
 
-        .done-by p{
-           font-size: 20px;
-           font-family: 'Courier New', Courier, monospace;
-           font-weight: bold;
+
+        .done-by p {
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
         }
 
-        @media  screen and (max-width:900px) {
+        @media screen and (max-width:900px) {
 
-            .cards{
+            .cards {
                 flex-direction: column;
-                
+
             }
-            .card{
+
+            .card {
                 width: 100%;
             }
-            
+
         }
     </style>
 

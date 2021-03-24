@@ -204,11 +204,15 @@ nav .header_right .algos button {
     color: white;
     outline: none;
     padding: 5% 0%;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease
 }
 
 nav .header_right .algos button:hover {
     background-color: #D23FF6;
     cursor: pointer;
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 nav .header_right .algos .disabled {
@@ -280,7 +284,6 @@ section #array_container {
     top: 0;
     height: 100%;
     width: 51%;
-    /* background: #000; */
     background: linear-gradient(to bottom right, #3859B2, #D23FF6);
 }
 
@@ -322,4 +325,3 @@ section #array_container {
     text-transform: uppercase;
     white-space: nowrap;
 }
-
