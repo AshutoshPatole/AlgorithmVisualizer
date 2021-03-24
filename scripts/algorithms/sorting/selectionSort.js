@@ -40,5 +40,6 @@ function SelectionSort() {
     updateDiv(divs[arraySize - 1], div_sizes[arraySize - 1], greenGradient);
     xAxisCount();
     enableButtons();
+    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 
 }

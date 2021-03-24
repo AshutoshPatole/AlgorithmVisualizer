@@ -35,4 +35,6 @@ function BubbleSort() {
     updateDiv(divs[0], div_sizes[0], greenGradient);
     enableButtons();
     xAxisCount();
+    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    
 }

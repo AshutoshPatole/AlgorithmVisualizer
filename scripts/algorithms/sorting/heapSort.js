@@ -4,6 +4,7 @@ function HeapSort() {
     heap_sort();
     enableButtons();
     xAxisCount();
+    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
 
 function swap(i, j) {

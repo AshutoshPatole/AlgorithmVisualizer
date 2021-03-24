@@ -7,6 +7,7 @@ let algorithmButtons = document.querySelectorAll(".algos button");
 let container = document.getElementById("array_container");
 let compare = document.getElementById("compare");
 let modal = document.getElementById("modal-content");
+let chevron = document.querySelectorAll(".chevron");
 
 /* 
     we will create 2 arrays here
@@ -221,7 +222,7 @@ let index = 0, spaceIndex = 0;
 setInterval(() => {
     let temp = [], spaceTemp = [];
     if (time.length == 0 && memoryUsage.length == 0) {
-        console.log("do nothing");
+       
     }
     else if (time.length == index + 1) {
         console.log("Sorting finished");
@@ -248,6 +249,8 @@ function generateArrayAndResetGraph() {
     myChart.data.labels = [];
     myChart.data.datasets[0].data = [];
     myChart.update();
+    time = [];
+    memoryUsage = [];
 }
 
 
@@ -307,3 +310,4 @@ let spaceChart = new Chart(space, {
         }
     }
 });
+

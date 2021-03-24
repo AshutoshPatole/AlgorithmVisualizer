@@ -4,8 +4,9 @@ function MergeSort() {
     mergePartition(0, arraySize - 1);
     enableButtons();
     xAxisCount();
-
+    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
+
 
 
 function mergePartition(start, end) {

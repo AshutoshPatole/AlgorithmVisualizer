@@ -38,4 +38,5 @@ function InsertionSort() {
     updateDiv(divs[j - 1], div_sizes[j - 1], greenGradient);
     enableButtons();
     xAxisCount();
+    toast(time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
