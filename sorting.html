@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Visualizer</title>
     <link rel="stylesheet" href="css/sorting/index.css">
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
     <script src="scripts/algorithms/sorting/Chart.bundle.min.js" defer></script>
     <script src="scripts/algorithms/sorting/index.js" defer></script>
     <script src="scripts/algorithms/sorting/visualization_Config.js" defer></script>
@@ -17,6 +18,7 @@
     <script src="scripts/algorithms/sorting/heapSort.js" defer></script>
     <script src="scripts/tata.js"></script>
     <script src="scripts/algorithms/sorting/globals.js" defer></script>
+
 </head>
 
 <body>
@@ -48,26 +50,27 @@
     <section>
         <div id="legends">
             <h2>Legends</h2> <br>
+
             <ul style="list-style-type: none; margin-block-end: 0rem;">
-                <li
-                    style="background: linear-gradient(to bottom right, #3859B2, #D23FF6); text-align: center; font-size: 20px; color: white;">
+                <button class="about" style="background: linear-gradient(to bottom right, #3859B2, #D23FF6);">
                     Traversed
-                </li>
+                </button>
                 <br>
-                <li
-                    style="background: linear-gradient(to bottom right, #FFDD00, #FBB034); text-align: center; font-size: 20px; color: white;">
+                <button class="about" style="background: linear-gradient(to bottom right, #FFDD00, #FBB034); ">
                     Pointer
-                </li>
+                </button>
                 <br>
-                <li
-                    style="background: linear-gradient(to bottom right, #A40606, #D98324); text-align: center; font-size: 20px; color: white;">
+                <button class="about" style="background: linear-gradient(to bottom right, #A40606, #D98324);">
                     Swapping
-                </li> <br>
-                <li
-                    style="background: linear-gradient(to bottom right, #20BF55, #01BAEF); text-align: center; font-size: 20px; color: white;">
+                </button> <br>
+                <button class="about" style="background: linear-gradient(to bottom right, #20BF55, #01BAEF);">
                     Sorted
-                </li> <br>
+                </button>
+                <br>
             </ul>
+            <div type="button" class="open-modal" data-open="modal1"> <button class="about"
+                    style="background-color: blueviolet;">About algorithm</button>
+            </div>
         </div>
         <div id="array_container" style="text-align:center">
         </div>
@@ -77,6 +80,23 @@
         <div class="chevron"></div>
         <div class="chevron"></div>
         <span class="text">Time and Space</span>
+    </div>
+
+    <div class="modal" id="modal1" data-animation="slideInOutLeft">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                Different algorithm speeds for the same dataset
+                <button class="close-modal" aria-label="close modal" data-close>
+                    ✕
+                </button>
+            </header>
+            <div class="modal-content">
+
+            </div>
+            <footer class="modal-footer">
+                Saga
+            </footer>
+        </div>
     </div>
     <div class="chart-container" style="position: relative; height:40vh; width:100vw">
         <canvas id="time"></canvas>
