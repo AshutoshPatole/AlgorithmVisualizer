@@ -7,6 +7,9 @@ let algorithmButtons = document.querySelectorAll(".algos button");
 let container = document.getElementById("array_container");
 let compare = document.getElementById("compare");
 let modal = document.getElementById("modal-content");
+let modalHeader = document.getElementById("runningAloName");
+let markdown = document.getElementById("markdown");
+
 /* 
     we will create 2 arrays here
         ==> div_sizes[0..n] will store the heights of the respected div(bar)
@@ -15,7 +18,7 @@ let modal = document.getElementById("modal-content");
 let div_sizes = [];
 let divs = [];
 let marginSize;
-
+let runningAlgo = "";
 // arraySize holds the value/input from the slider
 let arraySize = arraySizeSlider.value;
 
@@ -70,11 +73,13 @@ function disableButtons() {
     arraySizeSlider.disabled = true;
 
 }
-
+showAlgoInfo();
 // starting sorting algorithm
 function startSortingAlgorithm() {
     disableButtons();
     // this.classList.add("selectedAlgo");
+    runningAlgo = this.innerHTML;
+    showAlgoInfo();
     switch (this.innerHTML) {
         case "Bubble":
             BubbleSort();
@@ -307,3 +312,15 @@ let spaceChart = new Chart(space, {
     }
 });
 
+// let markdown = ["bubble", "merge"];
+
+function showAlgoInfo() {
+    if (runningAlgo.length == 0) {
+        console.log(runningAlgo);
+        modalHeader.innerHTML = "No algorithm has been run yet";
+    }
+    else {
+        modalHeader.innerHTML = runningAlgo + " Sort";
+        markdown.innerHTML = `<zero-md src='scripts/sorting/algorithmsMD/${runningAlgo}.md'></zero-md>`;
+    }
+}

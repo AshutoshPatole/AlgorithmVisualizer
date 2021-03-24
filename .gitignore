@@ -1,5 +1,5 @@
 .firebaserc
 firebase.json
 public/
-path/styling/cssBasic.css
-path/styling/cssPokemon.css 
+scripts/path/styling/cssBasic.css
+scripts/path/styling/cssPokemon.css 

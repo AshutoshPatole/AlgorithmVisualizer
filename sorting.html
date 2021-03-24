@@ -15,7 +15,8 @@
     <script src="scripts/sorting/algorithms/mergeSort.js" defer></script>
     <script src="scripts/sorting/algorithms/quickSort.js" defer></script>
     <script src="scripts/sorting/algorithms/heapSort.js" defer></script>
-    <script src="scripts/tata.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js" defer></script>
+    <script src="scripts/tata.js" defer></script>
     <script src="scripts/sorting/globals.js" defer></script>
 
 </head>
@@ -30,7 +31,6 @@
                 <input id="sorting_speed" type="range" min=1 max=5 step=1 value=3>
                 <button id="generate_array">Generate New Array!</button>
             </div>
-
             <div class="header_right">
                 <p class="nav-heading">Sorting visualizer</p>
                 <div class="algos">
@@ -83,13 +83,13 @@
     <div class="modal" id="modal1" data-animation="slideInOutLeft">
         <div class="modal-dialog">
             <header class="modal-header">
-               
+                <div id="runningAloName">Hello world</div>
                 <button class="close-modal" aria-label="close modal" data-close>
                     ✕
                 </button>
             </header>
-            <div class="modal-content">
-
+            <div class="modal-content" id="markdown">
+               
             </div>
             <footer class="modal-footer">
                 Developed with JS
