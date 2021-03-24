@@ -398,6 +398,14 @@ section #array_container {
     flex-direction: row;
 }
 
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 14px;
+}
+
 .modal-header .close-modal {
     font-size: 1rem;
 }
