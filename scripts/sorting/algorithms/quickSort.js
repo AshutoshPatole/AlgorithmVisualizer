@@ -3,7 +3,7 @@ function QuickSort() {
     quickSort(0, arraySize - 1);
     enableButtons();
     xAxisCount();
-    toast("Quick sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Quick Sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
 
 function quickSort(start, end) {
@@ -15,29 +15,21 @@ function quickSort(start, end) {
 }
 
 function quickPartition(start, end) {
-    // console.log(window.performance.memory.usedJSHeapSize);
-    let memory = window.performance.memory.usedJSHeapSize / 1000000;
-    let delay = cDelay / 1000;
-    time.push(delay);
-    // allAlgoSpeedResult[4] = delay;
-    memoryUsage.push(memory);
-    // allAlgoMemoryUsage[4] = memory;
+    time.push(cDelay / 1000);
+    memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
     let i = start + 1;
     let pivotIndex = div_sizes[start];
     updateDiv(divs[start], div_sizes[start], yellowGradient);
     for (let j = start; j <= end; j++) {
         if (div_sizes[j] < pivotIndex) {
             updateDiv(divs[j], div_sizes[j], yellowGradient);
-
             updateDiv(divs[i], div_sizes[i], redGradient);
             updateDiv(divs[j], div_sizes[j], redGradient);
-
             const temp = div_sizes[i];
             div_sizes[i] = div_sizes[j];
             div_sizes[j] = temp;
             updateDiv(divs[i], div_sizes[i], redGradient);
             updateDiv(divs[j], div_sizes[j], redGradient);
-
             updateDiv(divs[i], div_sizes[i], blueGradient);
             updateDiv(divs[j], div_sizes[j], blueGradient);
             i += 1;

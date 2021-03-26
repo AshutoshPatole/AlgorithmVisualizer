@@ -5,9 +5,7 @@ let delayTime = 10000 / (Math.floor(arraySize / 10) * speed);
 let cDelay = 0;
 
 function visualizeSpeed() {
-    let arraySortingSpeed = sortingSpeed.value;
-    // console.log(arraySortingSpeed);
-    switch (parseInt(arraySortingSpeed)) {
+    switch (parseInt(sortingSpeed.value)) {
         case 1:
             speed = 5;
             break;
@@ -25,7 +23,6 @@ function visualizeSpeed() {
             break;
     }
     delayTime = 10000 / (Math.floor(arraySize / 10) * speed);
-    // console.log(speed);
 }
 
 function updateDiv(container, height, gradient) {

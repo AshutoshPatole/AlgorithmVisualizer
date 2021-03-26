@@ -9,6 +9,5 @@ function toast (algorith, time, space){
         duration: 10000,
         position: 'br',
         animate: 'slide'
-
     });
 }

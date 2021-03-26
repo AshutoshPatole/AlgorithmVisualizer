@@ -1,13 +1,8 @@
 function InsertionSort() {
     cDelay = 0;
-
     for (var j = 0; j < arraySize; j++) {
-        let memory = window.performance.memory.usedJSHeapSize / 1000000;
-        let delay = cDelay / 1000;
-        time.push(delay);
-        // allAlgoSpeedResult[2] = delay;
-        memoryUsage.push(memory);
-        // allAlgoMemoryUsage[2] = memory;
+        time.push(cDelay / 1000);
+        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
         updateDiv(divs[j], div_sizes[j], yellowGradient);
         let key = div_sizes[j];
         let i = j - 1;
@@ -28,7 +23,6 @@ function InsertionSort() {
 
             }
             i -= 1;
-
         }
         div_sizes[i + 1] = key;
         for (let sort = 0; sort < j; sort++) {
@@ -38,5 +32,5 @@ function InsertionSort() {
     updateDiv(divs[j - 1], div_sizes[j - 1], greenGradient);
     enableButtons();
     xAxisCount();
-    toast("insertion sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Insertion Sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }

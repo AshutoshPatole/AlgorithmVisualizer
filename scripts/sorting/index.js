@@ -1,5 +1,3 @@
-// accessing html elements using by their ID
-
 let arraySizeSlider = document.getElementById('array_size');
 let generateArrayButton = document.getElementById("generate_array");
 let sortingSpeed = document.getElementById("sorting_speed");
@@ -10,30 +8,18 @@ let modal = document.getElementById("modal-content");
 let modalHeader = document.getElementById("runningAloName");
 let markdown = document.getElementById("markdown");
 
-/* 
-    we will create 2 arrays here
-        ==> div_sizes[0..n] will store the heights of the respected div(bar)
-        ==> divs[0..n] will store the elements i.e a div
-*/
+
 let div_sizes = [];
 let divs = [];
 let marginSize;
 let runningAlgo = "";
-// arraySize holds the value/input from the slider
 let arraySize = arraySizeSlider.value;
 
-// Event Listeners
+
 generateArrayButton.addEventListener("click", generateArrayAndResetGraph);
 arraySizeSlider.addEventListener("input", updateArraySize);
 
-/* 
-    generateArray function 
-        ==> it creates random heights for the bars using maximum and minimum value of the slider and height of the page,
-            it then stores the generated random heights in the div_sizes array[0..n]
-        ==> the divs[] array now creates div element and store them,
-            we then append those divs to the container area
-        ==> if the arraySize is more than 50 we will not show the height inside the div & at last we did some styling for each bar
-*/
+
 function generateArray() {
     container.innerHTML = "";
     for (let i = 0; i < arraySize; i++) {
@@ -41,7 +27,7 @@ function generateArray() {
         divs[i] = document.createElement("div");
         container.appendChild(divs[i]);
         marginSize = 0.1;
-        // console.log(`this is size of array : ${arraySize}`);
+
         if (arraySize < 50) {
             divs[i].innerHTML = div_sizes[i];
         }
@@ -49,7 +35,6 @@ function generateArray() {
     }
 }
 
-// this function is called whenever user changes arraySize slider
 function updateArraySize() {
     arraySize = arraySizeSlider.value;
     generateArray();
@@ -60,8 +45,6 @@ for (let i = 0; i < algorithmButtons.length; i++) {
     algorithmButtons[i].addEventListener("click", startSortingAlgorithm);
 }
 
-
-// disable interactions while algorithm is running
 function disableButtons() {
     for (let i = 0; i < algorithmButtons.length; i++) {
         algorithmButtons[i].classList = [];
@@ -74,10 +57,10 @@ function disableButtons() {
 
 }
 showAlgoInfo();
-// starting sorting algorithm
+
 function startSortingAlgorithm() {
     disableButtons();
-    // this.classList.add("selectedAlgo");
+
     runningAlgo = this.innerHTML;
     showAlgoInfo();
     switch (this.innerHTML) {
@@ -103,14 +86,14 @@ function startSortingAlgorithm() {
 }
 
 let cTime = 0;
-// enable interactions after completion of algorithm
+
 function enableButtons() {
     console.log(`Buttons unlocked.... ${cDelay}`);
     cTime = cDelay;
     window.setTimeout(function () {
         for (let i = 0; i < algorithmButtons.length; i++) {
             algorithmButtons[i].classList.remove("disabled");
-            // algorithmButtons[i].classList.remove("selectedAlgo");
+
             algorithmButtons[i].disabled = false;
         }
         sortingSpeed.disabled = false;
@@ -144,7 +127,7 @@ document.addEventListener("click", e => {
 });
 
 document.addEventListener("keyup", e => {
-    // if we press the ESC
+
     if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
         document.querySelector(".modal.is-visible").classList.remove(isVisible);
     }
@@ -152,7 +135,7 @@ document.addEventListener("keyup", e => {
 
 
 
-// Chart
+
 let time = [];
 let xAxis = [];
 let memoryUsage = [];
@@ -311,8 +294,6 @@ let spaceChart = new Chart(space, {
         }
     }
 });
-
-// let markdown = ["bubble", "merge"];
 
 function showAlgoInfo() {
     if (runningAlgo.length == 0) {

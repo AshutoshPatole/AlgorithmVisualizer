@@ -1,13 +1,10 @@
 function MergeSort() {
-
     cDelay = 0;
     mergePartition(0, arraySize - 1);
     enableButtons();
     xAxisCount();
-    toast("merge sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Merge Sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 }
-
-
 
 function mergePartition(start, end) {
     if (start < end) {
@@ -20,12 +17,8 @@ function mergePartition(start, end) {
 }
 
 function mergeSort(start, middle, end) {
-    let memory = window.performance.memory.usedJSHeapSize / 1000000;
-    let delay = cDelay / 1000;
-    time.push(delay);
-    // allAlgoSpeedResult[3] = delay;
-    memoryUsage.push(memory);
-    // allAlgoMemoryUsage.push(memory);
+    time.push(cDelay / 1000);
+    memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
     let s = start,
         m = middle + 1;
     let tempArray = [],

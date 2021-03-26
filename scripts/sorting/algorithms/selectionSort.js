@@ -2,12 +2,8 @@ function SelectionSort() {
     cDelay = 0;
     let minIndex = 0;
     for (let i = 0; i < arraySize - 1; i++) {
-        let memory = window.performance.memory.usedJSHeapSize / 1000000;
-        let delay = cDelay / 1000;
-        time.push(delay);
-        // allAlgoSpeedResult[1] = delay;
-        memoryUsage.push(memory);
-        // allAlgoMemoryUsage.push(memory);
+        time.push(cDelay / 1000);
+        memoryUsage.push(window.performance.memory.usedJSHeapSize / 1000000);
         updateDiv(divs[i], div_sizes[i], redGradient);
         minIndex = i;
         for (var j = i + 1; j < arraySize; j++) {
@@ -18,12 +14,9 @@ function SelectionSort() {
                 }
                 minIndex = j;
                 updateDiv(divs[minIndex], div_sizes[minIndex], redGradient);
-
             } else {
                 updateDiv(divs[j], div_sizes[j], blueGradient);
-
             }
-
         }
         if (minIndex != i) {
             const temp = div_sizes[minIndex];
@@ -34,12 +27,10 @@ function SelectionSort() {
             updateDiv(divs[minIndex], div_sizes[minIndex], blueGradient);
         }
         updateDiv(divs[i], div_sizes[i], greenGradient);
-
     }
-
     updateDiv(divs[arraySize - 1], div_sizes[arraySize - 1], greenGradient);
     xAxisCount();
     enableButtons();
-    toast("selection sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
+    toast("Selection Sort", time[time.length - 1], memoryUsage[memoryUsage.length - 1]);
 
 }
