@@ -35,6 +35,18 @@ function generateArray() {
     }
 }
 
+function checkBrowser() {
+    if (navigator.userAgent.indexOf("Firefox") > -1) {
+        checkBrowserToast("Error", "Firefox");
+        window.location.href = "error.html";
+    }
+    else {
+        checkBrowserToast("Success", "Not firefox");
+    }
+}
+
+checkBrowser();
+
 function updateArraySize() {
     arraySize = arraySizeSlider.value;
     generateArray();

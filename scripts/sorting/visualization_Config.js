@@ -26,7 +26,7 @@ function visualizeSpeed() {
 }
 
 function updateDiv(container, height, gradient) {
-    window.setTimeout(function() {
+    window.setTimeout(function () {
         container.style = " margin:0% " + marginSize + "%; width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + height + "%; background-image:" + gradient + ";";
         if (arraySize < 50) {
             container.innerHTML = height;
