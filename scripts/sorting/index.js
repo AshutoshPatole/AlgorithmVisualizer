@@ -38,7 +38,7 @@ function generateArray() {
 function checkBrowser() {
     if (navigator.userAgent.indexOf("Firefox") > -1) {
         window.location.href = "error.html";
-    }   
+    }
 }
 
 checkBrowser();
@@ -189,6 +189,8 @@ let myChart = new Chart(timeChart, {
     type: 'line',
     data: data,
     options: {
+        maintainAspectRatio: false,
+        responsive: true,
         animations: {
             tension: {
                 duration: 100,
@@ -280,6 +282,8 @@ let spaceChart = new Chart(space, {
     type: 'line',
     data: spaceData,
     options: {
+        maintainAspectRatio: false,
+        responsive: true,
         animations: {
             tension: {
                 duration: 100,
