@@ -486,4 +486,26 @@ section #array_container {
     section #array_container {
         margin: 0px;
     }
+    nav .array-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+    nav .array-inputs p {
+        display: none;
+    }
+    nav .array-inputs input {
+        margin-top: 5px;
+    }
+    nav .array-inputs #generate_array {
+        padding-left: 4%;
+    }
+    nav .header_right .algos button {
+        font-size: 8px;
+    }
+    nav .header_right .algos {
+        display: block;
+    }
+    .down-arrow {
+        margin-top: -30%;
+    }
 }

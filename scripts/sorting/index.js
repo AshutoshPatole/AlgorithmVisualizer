@@ -23,6 +23,7 @@ arraySizeSlider.addEventListener("input", updateArraySize);
 if (isMobile) {
     legends.style = "display: none";
     container.style = "width: 100%";
+    arraySizeSlider.setAttribute("max", 100);;
 }
 function generateArray() {
     container.innerHTML = "";
@@ -31,12 +32,11 @@ function generateArray() {
         divs[i] = document.createElement("div");
         container.appendChild(divs[i]);
         marginSize = isMobile ? 0.2 : 0.1;
-        console.log(marginSize);
-
+        let height = isMobile ? div_sizes[i] * 1.5 : div_sizes[i];
         if (arraySize < 50) {
             divs[i].innerHTML = div_sizes[i];
         }
-        divs[i].style = " margin:0% " + marginSize + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + (div_sizes[i]) + "%; text-align: center";
+        divs[i].style = " margin:0% " + marginSize + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + height + "%; text-align: center";
     }
 }
 
