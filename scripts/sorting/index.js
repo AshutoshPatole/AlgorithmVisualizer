@@ -7,6 +7,7 @@ let compare = document.getElementById("compare");
 let modal = document.getElementById("modal-content");
 let modalHeader = document.getElementById("runningAloName");
 let markdown = document.getElementById("markdown");
+let legends = document.getElementById("legends");
 
 
 let div_sizes = [];
@@ -19,19 +20,23 @@ let arraySize = arraySizeSlider.value;
 generateArrayButton.addEventListener("click", generateArrayAndResetGraph);
 arraySizeSlider.addEventListener("input", updateArraySize);
 
-
+if (isMobile) {
+    legends.style = "display: none";
+    container.style = "width: 100%";
+}
 function generateArray() {
     container.innerHTML = "";
     for (let i = 0; i < arraySize; i++) {
         div_sizes[i] = Math.floor(Math.random() * 0.35 * (arraySizeSlider.max - arraySizeSlider.min)) + 10;
         divs[i] = document.createElement("div");
         container.appendChild(divs[i]);
-        marginSize = 0.1;
+        marginSize = isMobile ? 0.2 : 0.1;
+        console.log(marginSize);
 
         if (arraySize < 50) {
             divs[i].innerHTML = div_sizes[i];
         }
-        divs[i].style = " margin:0% " + marginSize + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + (div_sizes[i]) + "%;";
+        divs[i].style = " margin:0% " + marginSize + "%; background-image:linear-gradient(#614385, #3859B2); width:" + (100 / arraySize - (2 * marginSize)) + "%; height:" + (div_sizes[i]) + "%; text-align: center";
     }
 }
 
@@ -141,13 +146,9 @@ document.addEventListener("keyup", e => {
     }
 });
 
-
-
-
 let time = [];
 let xAxis = [];
 let memoryUsage = [];
-
 
 function xAxisCount() {
     for (let i = 0; i < time.length; i++) {
