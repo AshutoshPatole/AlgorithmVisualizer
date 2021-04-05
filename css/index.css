@@ -67,3 +67,35 @@
         width: 100%;
     }
 }
+
+.auth {
+    margin-left: 75%;
+}
+
+.pushable {
+    background: hsl(220deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    margin-top: 40px;
+}
+
+.front {
+    display: block;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: linear-gradient(to bottom right, #3859B2, #D23FF6);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
