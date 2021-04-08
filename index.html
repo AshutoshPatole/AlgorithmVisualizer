@@ -9,16 +9,24 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="scripts/tata.js" defer></script>
     <script src="scripts/globals.js" defer></script>
+    <script src="index.js" defer></script>
     <title>Algorithms Visualization</title>
 </head>
 
 <body>
-    <div class="auth">
-        <button onclick="window.location='login.html'" class="pushable">
+    <div id="auth">
+        <button onclick="window.location='login.html'" class="pushable" id="login">
             <span class="front">
                 Login
             </span>
         </button>
+        <button onclick="window.location='login.html'" class="pushable" id="logout">
+            <span class="front">
+                Logout
+            </span>
+        </button>
+        <h3 id="user"></h3>
+
     </div>
     <div class="container">
         <div class="cards">
@@ -41,11 +49,11 @@
                 </a>
             </div>
         </div>
-        <div class="done-by">
+        <!-- <div class="done-by">
             <h3>Made by</h3>
             <p>Ashutosh Patole A</p>
             <p>Abilash S H</p>
-        </div>
+        </div> -->
     </div>
 </body>
 

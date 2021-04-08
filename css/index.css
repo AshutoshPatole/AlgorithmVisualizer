@@ -68,10 +68,15 @@
     }
 }
 
-.auth {
-    margin-left: 90%;
+#login, #logout {
+    margin-left: 80%;
+    margin-top: 2%;
 }
 
+#user{
+    margin-top: -2.5%;
+    margin-left: 2.5%;
+}
 .pushable {
     background: hsl(220deg 100% 32%);
     border-radius: 12px;
@@ -79,7 +84,6 @@
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
-    margin-top: 40px;
 }
 
 .front {

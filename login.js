@@ -46,7 +46,7 @@ registerButton.addEventListener('click', async () => {
         let userName = json['name'];
         sessionStorage.setItem("userName", userName);
         showLoading();
-        tata.success("Created", "Congrats", {
+        tata.success("Congrats", "Hang in we are transporting you..", {
             duration: 5000,
             position: 'tr',
             animate: 'slide'
@@ -84,7 +84,7 @@ loginButton.addEventListener('click', async () => {
         let userName = json['name'];
         sessionStorage.setItem("userName", userName);
         showLoading();
-        tata.success("Success", "Logged in", {
+        tata.success("Congrats", "Hang in we are transporting you..", {
             duration: 5000,
             position: 'tr',
             animate: 'slide'
