@@ -69,11 +69,15 @@ function disableButtons() {
     arraySizeSlider.disabled = true;
 
 }
+document.getElementById("info").addEventListener('click', () => {
+    console.log("Clicked")
+    markdown.innerHTML = `<zero-md src='scripts/sorting/algorithmsMD/info.md'></zero-md>`;
+
+});
 showAlgoInfo();
 
 function startSortingAlgorithm() {
     disableButtons();
-
     runningAlgo = this.innerHTML;
     showAlgoInfo();
     switch (this.innerHTML) {
@@ -101,7 +105,6 @@ function startSortingAlgorithm() {
 let cTime = 0;
 
 function enableButtons() {
-    console.log(`Buttons unlocked.... ${cDelay}`);
     cTime = cDelay;
     window.setTimeout(function () {
         for (let i = 0; i < algorithmButtons.length; i++) {
@@ -220,7 +223,6 @@ setInterval(() => {
     if (time.length == 0 && memoryUsage.length == 0) {
     }
     else if (time.length == index + 1) {
-        console.log("Sorting finished");
 
     }
     else {
@@ -310,7 +312,6 @@ let spaceChart = new Chart(space, {
 
 function showAlgoInfo() {
     if (runningAlgo.length == 0) {
-        console.log(runningAlgo);
         modalHeader.innerHTML = "No algorithm has been run yet";
     }
     else {
