@@ -63,6 +63,19 @@ registerButton.addEventListener('click', async () => {
 
 loading.style.display = "none";
 
+const authToast = (sub, message, isSuccess) => {
+    isSuccess ? tata.success(sub, message, {
+        duration: 5000,
+        position: 'tr',
+        animate: 'slide'
+    }) :
+        tata.error(sub, message, {
+            duration: 10000,
+            position: 'br',
+            animate: 'slide'
+        });
+}
+
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('logEmail').value;
     let pass = document.getElementById('logPass').value;
@@ -76,26 +89,23 @@ loginButton.addEventListener('click', async () => {
         })
     };
 
-    let response = await fetch(url, obj);
-    let json;
-    if (response.ok) {
-        json = await response.json();
-        localStorage.setItem("user", JSON.stringify(json));
-        let userName = json['name'];
-        sessionStorage.setItem("userName", userName);
-        showLoading();
-        tata.success("Congrats", "Hang in we are transporting you..", {
-            duration: 5000,
-            position: 'tr',
-            animate: 'slide'
-        });
-    } else {
-        let temp = await response.json();
-        console.error(temp.message);
-        tata.error("Error", temp.message, {
-            duration: 10000,
-            position: 'br',
-            animate: 'slide'
-        });
+    try {
+        let response = await fetch(url, obj);
+        let json;
+        if (response.ok) {
+            json = await response.json();
+            localStorage.setItem("user", JSON.stringify(json));
+            let userName = json['name'];
+            sessionStorage.setItem("userName", userName);
+            showLoading();
+            authToast("Congrats", "Hang in we are transporting you..", true);
+        } else {
+            let temp = await response.json();
+            console.error(temp.message);
+            authToast("Error", temp.message, false);
+        }
+    }
+    catch (e) {
+        authToast("Server Error", "Houston we have a problem", false);
     }
 });
