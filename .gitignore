@@ -3,3 +3,5 @@ firebase.json
 public/
 scripts/path/styling/cssBasic.css
 scripts/path/styling/cssPokemon.css 
+node_modules/
+.env
