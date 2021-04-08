@@ -3,7 +3,7 @@ const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 const registerButton = document.getElementById('register');
 const loginButton = document.getElementById("login");
-
+const loading = document.getElementById('loading');
 
 signUpButton.addEventListener('click', () => {
     container.classList.add("right-panel-active");
@@ -13,6 +13,14 @@ signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
 });
 
+
+function showLoading() {
+    container.style.display = "none";
+    loading.style.display = "block";
+    setTimeout(() => {
+        window.location = "index.html";
+    }, 4500);
+}
 registerButton.addEventListener('click', async () => {
     let name = document.getElementById('name').value;
     let email = document.getElementById('regEmail').value;
@@ -34,7 +42,10 @@ registerButton.addEventListener('click', async () => {
     let json;
     if (response.ok) {
         json = await response.json();
-        console.warn(json);
+        localStorage.setItem("user", JSON.stringify(json));
+        let userName = json['name'];
+        sessionStorage.setItem("userName", userName);
+        showLoading();
         tata.success("Created", "Congrats", {
             duration: 5000,
             position: 'tr',
@@ -42,7 +53,6 @@ registerButton.addEventListener('click', async () => {
         });
     } else {
         let temp = await response.json();
-        console.error(temp.message);
         tata.error("Error", temp.message, {
             duration: 10000,
             position: 'br',
@@ -50,6 +60,8 @@ registerButton.addEventListener('click', async () => {
         });
     }
 });
+
+loading.style.display = "none";
 
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('logEmail').value;
@@ -68,7 +80,10 @@ loginButton.addEventListener('click', async () => {
     let json;
     if (response.ok) {
         json = await response.json();
-        console.warn(json);
+        localStorage.setItem("user", JSON.stringify(json));
+        let userName = json['name'];
+        sessionStorage.setItem("userName", userName);
+        showLoading();
         tata.success("Success", "Logged in", {
             duration: 5000,
             position: 'tr',

@@ -9,11 +9,17 @@
     <script src="scripts/tata.js" defer></script>
     <script src="./login.js" defer></script>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="loading.css">
 </head>
 
 <body>
-
-    <div class="container" id="container">
+    <div id="loading" style="z-index: 20;">
+        <div id="loop" class="center"></div>
+        <div id="bike-wrapper" class="center">
+            <div id="bike" class="centerBike"></div>
+        </div>
+    </div>
+    <div class="container" id="container" style="z-index: 10;">
         <div class="form-container sign-up-container">
             <form action="#" id="registerForm">
                 <h1>Create Account</h1>
@@ -21,7 +27,7 @@
                 <input type="text" placeholder="Name" id="name" />
                 <input type="email" placeholder="Email" id="regEmail" />
                 <input type="password" placeholder="Password" id="regPass" />
-                <button id="register">Sign Up</button>
+                <button id="register" type="button">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -31,7 +37,7 @@
                 <input type="email" placeholder="Email" id="logEmail" />
                 <input type="password" placeholder="Password" id="logPass" />
                 <a href="#">Forgot your password?</a>
-                <button id="login">Sign In</button>
+                <button id="login" type="button">Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
