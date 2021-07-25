@@ -19,50 +19,8 @@ function showLoading() {
     loading.style.display = "block";
     setTimeout(() => {
         window.location = "index.html";
-    }, 4500);
+    }, 3000);
 }
-registerButton.addEventListener('click', async () => {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('regEmail').value;
-    let pass = document.getElementById('regPass').value;
-
-
-    const url = "http://localhost:5000/auth/signup";
-    let obj = {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-            "email": email,
-            "name": name,
-            "password": pass
-        })
-    };
-
-    let response = await fetch(url, obj);
-    let json;
-    if (response.ok) {
-        json = await response.json();
-        localStorage.setItem("user", JSON.stringify(json));
-        let userName = json['name'];
-        sessionStorage.setItem("userName", userName);
-        showLoading();
-        tata.success("Congrats", "Hang in we are transporting you..", {
-            duration: 5000,
-            position: 'tr',
-            animate: 'slide'
-        });
-    } else {
-        let temp = await response.json();
-        tata.error("Error", temp.message, {
-            duration: 10000,
-            position: 'br',
-            animate: 'slide'
-        });
-    }
-});
-
-loading.style.display = "none";
-
 const authToast = (sub, message, isSuccess) => {
     isSuccess ? tata.success(sub, message, {
         duration: 5000,
@@ -76,10 +34,53 @@ const authToast = (sub, message, isSuccess) => {
         });
 }
 
+registerButton.addEventListener('click', async () => {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('regEmail').value;
+    let pass = document.getElementById('regPass').value;
+
+
+    const url = "https://visualisealgo.herokuapp.com/auth/signup";
+    let obj = {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+            "email": email,
+            "name": name,
+            "password": pass
+        })
+    };
+
+    try {
+        let response = await fetch(url, obj);
+        let json;
+        if (response.ok) {
+            json = await response.json();
+            localStorage.setItem("user", JSON.stringify(json));
+            let userName = json['name'];
+            sessionStorage.setItem("userName", userName);
+            showLoading();
+            authToast("Congrats", "Hang in we are transporting you..", true);
+
+        } else {
+            let temp = await response.json();
+            authToast("Error", temp.message, false);
+
+        }
+    }
+    catch (e) {
+        authToast("Server Error", "Houston we have a problem", false);
+
+    }
+});
+
+loading.style.display = "none";
+
+
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('logEmail').value;
     let pass = document.getElementById('logPass').value;
-    const url = "http://localhost:5000/auth/signin";
+    const url = "https://visualisealgo.herokuapp.com/auth/signin";
     let obj = {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
