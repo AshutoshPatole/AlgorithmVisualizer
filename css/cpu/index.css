@@ -12,6 +12,13 @@ body {
   background-image: linear-gradient(#614385, #516395);
 }
 
+#home {
+  cursor: pointer;
+  position: absolute;
+  bottom: 25%;
+  left: 95%;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
