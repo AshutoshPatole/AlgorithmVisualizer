@@ -40,6 +40,13 @@ nav .array-inputs #array_size {
     padding: 5% 0%;
 }
 
+#home {
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    left: 90%;
+}
+
 input[type=range] {
     -webkit-appearance: none;
     width: 100%;
@@ -509,7 +516,6 @@ section #array_container {
         margin-top: -30%;
     }
 }
-
 
 .icon-row {
     display: flex;
